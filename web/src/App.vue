@@ -29,6 +29,36 @@ export default {
       }
     })
 
+    $.ajax({
+      url: "http://127.0.0.1:3000/user/account/info/",
+      type: "get",
+      headers: {
+        Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NTcxYWE4ZTAzZTA0OGJlYjc0MmY2MzM3ZmE0NjYxZiIsInN1YiI6IjIiLCJpc3MiOiJzZyIsImlhdCI6MTcxMzIwNTI0NiwiZXhwIjoxNzE0NDE0ODQ2fQ.J-Nvqy6fQ2SE-bP17SjqXehGnI4gKygLgcwnYksCwkI"
+      },
+      success(resp) {
+        console.log(resp);
+      },
+      error(resp) {
+        console.log(resp);
+      }
+    })
+
+    $.ajax({
+      url: "http://127.0.0.1:3000/user/account/register/",
+      type: "post",
+      data: {
+        username: "ljq",
+        password: "123",
+        confirmedPassword: "123"
+      },
+      success(resp) {
+        console.log(resp);
+      },
+      error(resp) {
+        console.log(resp);
+      }
+    })
+
   }
 
 }
