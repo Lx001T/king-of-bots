@@ -15,7 +15,7 @@ export default {
   },
   setup() {
     $.ajax({
-      url: "http://127.0.0.1:3000/user/account/token/",
+      url: "http://localhost:3000/user/account/token/",
       type: "post",
       data: {
         username: "ljq",
@@ -30,10 +30,10 @@ export default {
     })
 
     $.ajax({
-      url: "http://127.0.0.1:3000/user/account/info/",
+      url: "http://localhost:3000/user/account/info/",
       type: "get",
       headers: {
-        Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NTcxYWE4ZTAzZTA0OGJlYjc0MmY2MzM3ZmE0NjYxZiIsInN1YiI6IjIiLCJpc3MiOiJzZyIsImlhdCI6MTcxMzIwNTI0NiwiZXhwIjoxNzE0NDE0ODQ2fQ.J-Nvqy6fQ2SE-bP17SjqXehGnI4gKygLgcwnYksCwkI"
+        Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlNzU4NGI2NDE5OTE0OWY0OGViZmMyNTkzZDExMTRkMSIsInN1YiI6IjIiLCJpc3MiOiJzZyIsImlhdCI6MTcxMzI3OTQ3MCwiZXhwIjoxNzE0NDg5MDcwfQ.OudRlvQGtcmQ7Q6qFQWYObqxAMalEI7NAbqBcF4DpGA"
       },
       success(resp) {
         console.log(resp);
@@ -44,12 +44,12 @@ export default {
     })
 
     $.ajax({
-      url: "http://127.0.0.1:3000/user/account/register/",
+      url: "http://localhost:3000/user/account/register/",
       type: "post",
       data: {
         username: "ljq",
-        password: "123",
-        confirmedPassword: "123"
+        password: "pljq",
+        confirmedPassword:"pljq"
       },
       success(resp) {
         console.log(resp);
@@ -58,7 +58,6 @@ export default {
         console.log(resp);
       }
     })
-
   }
 
 }

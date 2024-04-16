@@ -1,3 +1,5 @@
+package com.kob.backend.config;
+
 import com.kob.backend.config.filter.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

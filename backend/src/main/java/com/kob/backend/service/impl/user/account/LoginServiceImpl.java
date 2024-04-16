@@ -4,7 +4,6 @@ import com.kob.backend.pojo.User;
 import com.kob.backend.service.impl.utils.UserDetailsImpl;
 import com.kob.backend.service.user.account.LoginService;
 import com.kob.backend.utils.JwtUtil;
-import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,7 +16,7 @@ import java.util.Map;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Resource
+    @Autowired
     private AuthenticationManager authenticationManager;
 
     @Override
@@ -25,7 +24,7 @@ public class LoginServiceImpl implements LoginService {
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(username, password);
 
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken); // 登录失败，自动处理
+        Authentication authenticate = authenticationManager.authenticate(authenticationToken); //登录失败自动处理
 
         UserDetailsImpl loginUser = (UserDetailsImpl) authenticate.getPrincipal();
         User user = loginUser.getUser();
@@ -37,4 +36,5 @@ public class LoginServiceImpl implements LoginService {
 
         return map;
     }
+
 }
